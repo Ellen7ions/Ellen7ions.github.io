@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>[CSAPP] Bits, Bytes And Integers - Ellen7ions&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Ellen7ions"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ellen7ions"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta description="Tom read again."><meta property="og:type" content="blog"><meta property="og:title" content="[CSAPP] Bits, Bytes And Integers"><meta property="og:url" content="http://example.com/2021/01/10/CSAPP-Bits-Bytes-And-Integers-1/"><meta property="og:site_name" content="Ellen7ions&#039;s Blog"><meta property="og:description" content="Tom read again."><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/tom_read_csapp.png"><meta property="article:published_time" content="2021-01-10T07:51:08.000Z"><meta property="article:modified_time" content="2021-01-10T09:17:26.065Z"><meta property="article:author" content="Ellen7ions"><meta property="article:tag" content="CSAPP"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/tom_read_csapp.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/01/10/CSAPP-Bits-Bytes-And-Integers-1/"},"headline":"Ellen7ions's Blog","image":["http://example.com/img/tom_read_csapp.png"],"datePublished":"2021-01-10T07:51:08.000Z","dateModified":"2021-01-10T09:17:26.065Z","author":{"@type":"Person","name":"Ellen7ions"},"description":"Tom read again."}</script><link rel="canonical" href="http://example.com/2021/01/10/CSAPP-Bits-Bytes-And-Integers-1/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Ellen7ions&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/img/tom_read_csapp.png" alt="[CSAPP] Bits, Bytes And Integers"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-01-10T07:51:08.000Z" title="2021-01-10T07:51:08.000Z">2021-01-10</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-01-10T09:17:26.065Z" title="2021-01-10T09:17:26.065Z">2021-01-10</time></span><span class="level-item">3 minutes read (About 472 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">[CSAPP] Bits, Bytes And Integers</h1><div class="content"><p>Tom read again.</p>
+<a id="more"></a>
+
+<h2 id="1-Shift-Operations"><a href="#1-Shift-Operations" class="headerlink" title="1 Shift Operations"></a>1 Shift Operations</h2><h4 id="1-1-Left-Shift-x-lt-lt-y"><a href="#1-1-Left-Shift-x-lt-lt-y" class="headerlink" title="1.1 Left Shift x &lt;&lt; y"></a>1.1 Left Shift x &lt;&lt; y</h4><p>Left Shift the number. Fill with zero on right And throw the extra bits on left.</p>
+<h4 id="1-2-Right-Shift-x-gt-gt-y"><a href="#1-2-Right-Shift-x-gt-gt-y" class="headerlink" title="1.2  Right Shift x &gt;&gt; y"></a>1.2  Right Shift x &gt;&gt; y</h4><p>There are 2 kinds of Right Shifting. </p>
+<p>Logical shift: Just shift right  and fill zero on left.</p>
+<p>Arithmetic shift: Fill the MSB on the left.</p>
+<h5 id="Why-Arithmetic-shift"><a href="#Why-Arithmetic-shift" class="headerlink" title="Why Arithmetic shift ?"></a>Why Arithmetic shift ?</h5><p>It’s a little trick. In Two’s Complement Number, the Negative number’s MSB is 1, if you add any bits on left, the value is same to the original.</p>
+<p>eg: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Suppose the MSB is sign  bit.</span><br><span class="line">0b11011 =&gt; -5</span><br><span class="line">add a new bit on left:</span><br><span class="line">0b111011 =&gt; -5</span><br></pre></td></tr></table></figure>
+
+<p>So u can suppose the number is negative if the higher bits filled with 1.</p>
+<h4 id="1-3-Shift-Or-Modular-operation"><a href="#1-3-Shift-Or-Modular-operation" class="headerlink" title="1.3 Shift Or Modular operation"></a>1.3 Shift Or Modular operation</h4><p>Left Shifting a number with k bits width is as same as  modular with $2^k$。</p>
+<h2 id="2-Numeric-Ranges"><a href="#2-Numeric-Ranges" class="headerlink" title="2  Numeric Ranges"></a>2  Numeric Ranges</h2><h3 id="2-1-Unsigned-Number"><a href="#2-1-Unsigned-Number" class="headerlink" title="2.1 Unsigned Number"></a>2.1 Unsigned Number</h3><p>$$<br>UMin =  {0…0}\\<br>UMax =  {1…1}\\<br>$$</p>
+<p>$$<br>\text {Range from 0 to } 2^k-1<br>$$</p>
+<h3 id="2-2-Two’s-Complement-Values"><a href="#2-2-Two’s-Complement-Values" class="headerlink" title="2.2 Two’s Complement Values"></a>2.2 Two’s Complement Values</h3><p>$$<br>TMin = {100…00} \\<br>TMax = {011…00}\\<br>$$</p>
+<p>$$<br>\text {Range from } -2^{k-1} \text{ to } 2^{k-1}-1<br>$$</p>
+<blockquote>
+<p>Some trick</p>
+<p>If you replace the sign bit in a two’s Complement values with 0, it become a positive number. This positive number adds the abs of the original number will get the $2^{k-1}$.</p>
+</blockquote>
+<h4 id="2-3-Cast-between-unsigned-number-and-signed-number"><a href="#2-3-Cast-between-unsigned-number-and-signed-number" class="headerlink" title="2.3 Cast between unsigned number and signed number"></a>2.3 Cast between unsigned number and signed number</h4><p>U can cast them explicitly or implicitly. If both of  them in the same expression, the result will cast to unsigned number implicitly.</p>
+<p>Such as <strong>sizeof</strong>, the result of <strong>sizeof</strong> is Unsigned number. So something will go wrong.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">10</span>; <span class="keyword">sizeof</span>(A) &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="comment">// This loop will go forever as unsigned number is always greater than 0.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-3-1-Casting-And-Comparing"><a href="#2-3-1-Casting-And-Comparing" class="headerlink" title="2.3.1 Casting And Comparing"></a>2.3.1 Casting And Comparing</h5><p>When Comparing, signed number values implicitly cast to unsigned.</p>
+<table>
+<thead>
+<tr>
+<th>Signed Number</th>
+<th>Unsigned Number</th>
+<th>Relation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-1</td>
+<td>0U</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td>-2147483648 = 10…000</td>
+<td>2147483647U = 0111…111</td>
+<td>&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="3-Addition-Minus-Multiply-And-Divide"><a href="#3-Addition-Minus-Multiply-And-Divide" class="headerlink" title="3 Addition Minus Multiply And Divide"></a>3 Addition Minus Multiply And Divide</h2><h4 id="3-1-Addition"><a href="#3-1-Addition" class="headerlink" title="3.1 Addition"></a>3.1 Addition</h4><h5 id="3-1-1-Signed-Number"><a href="#3-1-1-Signed-Number" class="headerlink" title="3.1.1 Signed Number"></a>3.1.1 Signed Number</h5><p>Two’s Complement Values’ addition can present addition and minus,. When you add two Ts, you  may drop the Carry number which also means you operate the modular with $2^k$.</p>
+<p>eg:</p>
+<blockquote>
+<p>Two’s Complement  Values:</p>
+<p>1101 =&gt; -3</p>
+<p>0101 =&gt; 5</p>
+<p>add them:</p>
+<p>1_0010 =&gt; drop the carry 1, result is 2.</p>
+<p>But if you see them as Unsigned number, this is 13(0b1101) + 5(0b0101) = 18 % ($2^4$) = 2</p>
+</blockquote>
+<h5 id="3-1-2-TAdd-Overflow"><a href="#3-1-2-TAdd-Overflow" class="headerlink" title="3.1.2 TAdd Overflow"></a>3.1.2 TAdd Overflow</h5><p><img src="/2021/01/10/CSAPP-Bits-Bytes-And-Integers-1/tadd_overflow.png" alt="Tadd OverFlow"></p>
+<h5 id="3-1-2-Unsigned-Number"><a href="#3-1-2-Unsigned-Number" class="headerlink" title="3.1.2 Unsigned Number"></a>3.1.2 Unsigned Number</h5><p>Just drop the carry.</p>
+<h5 id="3-1-3-Multiply-2-k-or-divide-it"><a href="#3-1-3-Multiply-2-k-or-divide-it" class="headerlink" title="3.1.3 Multiply $2^k$ or divide it"></a>3.1.3 Multiply $2^k$ or divide it</h5><p>multiply is left right shift k bits.</p>
+<p>divide is right shift k bits. </p>
+<h3 id="4-Memory"><a href="#4-Memory" class="headerlink" title="4 Memory"></a>4 Memory</h3><h5 id="4-1-Word-Size"><a href="#4-1-Word-Size" class="headerlink" title="4.1 Word Size"></a>4.1 Word Size</h5><p>There is no a accurate definition for word size. Word size present the number of bytes processed once.</p>
+<p>Why 32-bits machine only support 4GB RAM?</p>
+<p>32-bits is also the bit number of address, so the address is most 4,294,967,295 which is about 4GB.</p>
+<p>But 64bits is much longer, which can present more address.</p>
+<h5 id="4-2-How-is-data-stored-in-the-memory"><a href="#4-2-How-is-data-stored-in-the-memory" class="headerlink" title="4.2 How is data stored in the memory?"></a>4.2 How is data stored in the memory?</h5><p>Big-endian And Little-endian, Most machine use Little endian.</p>
+<p>Little-endian means place the lower bytes in the higher bits. Such as…</p>
+<p><img src="/2021/01/10/CSAPP-Bits-Bytes-And-Integers-1/little_endian.png" alt="little-endian"></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>[CSAPP] Bits, Bytes And Integers</p><p><a href="http://example.com/2021/01/10/CSAPP-Bits-Bytes-And-Integers-1/">http://example.com/2021/01/10/CSAPP-Bits-Bytes-And-Integers-1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Ellen7ions</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-01-10</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-01-10</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/CSAPP/">CSAPP</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/01/10/Something-about-Pointers/"><span class="level-item">Something about Pointers</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="SOHUCS" sid="2021/01/10/CSAPP-Bits-Bytes-And-Integers-1/"></div><script charset="utf-8" src="https://changyan.sohu.com/upload/changyan.js"></script><script>window.changyan.api.config({appid: 'cyv8YlDsb',conf: 'prod_58b5dacf27fccf7f756f445279a52175'});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/cat.jpg" alt="Ellen7ions"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ellen7ions</p><p class="is-size-6 is-block">I miss you forever.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>UJN</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">18</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Ellen7ions" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Ellen7ions"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/30941321"><i class="fab fa-youtube"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://space.bilibili.com/30941321" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bilibili</span></span><span class="level-right"><span class="level-item tag">space.bilibili.com</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-10T07:51:08.000Z">2021-01-10</time></p><p class="title"><a href="/2021/01/10/CSAPP-Bits-Bytes-And-Integers-1/">[CSAPP] Bits, Bytes And Integers</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-10T07:20:22.000Z">2021-01-10</time></p><p class="title"><a href="/2021/01/10/Something-about-Pointers/">Something about Pointers</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-25T06:20:42.000Z">2020-12-25</time></p><p class="title"><a href="/2020/12/25/Diary-12-25-2020/">Diary-12-25-2020</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-13T23:46:47.000Z">2020-12-14</time></p><p class="title"><a href="/2020/12/14/Diary-12-14-2020/">Diary-12-14-2020</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-05T08:21:05.000Z">2020-12-05</time></p><p class="title"><a href="/2020/12/05/Happy-Birthday/">Happy Birthday~</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">January 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSAPP/"><span class="tag">CSAPP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Deep-Learning/"><span class="tag">Deep Learning</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Entropy/"><span class="tag">Entropy</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linear-Algebra/"><span class="tag">Linear Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Machine-Learning/"><span class="tag">Machine Learning</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Pointers/"><span class="tag">Pointers</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Spring/"><span class="tag">Spring</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SpringBoot/"><span class="tag">SpringBoot</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/diary/"><span class="tag">diary</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/math/"><span class="tag">math</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Ellen7ions&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2021 Ellen7ions</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
